@@ -72,6 +72,7 @@ def create_project(request):
     return render(request, 'projects/create_project.html', {'form': form})
 
 def project_detail(request, id):
+
     project = get_object_or_404(Project, id=id)
     tasks  = Task.objects.filter(project_id=id)
     return render(request, 'projects/detail.html' , {
@@ -80,7 +81,9 @@ def project_detail(request, id):
         })
 
 def edit_project(request, project_id):
+
     project = get_object_or_404(Project, id=project_id)
+
     if request.method == 'POST':
         form = CreateNewProject(request.POST, instance=project)
         if form.is_valid():
