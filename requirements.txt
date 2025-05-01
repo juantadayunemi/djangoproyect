@@ -1,0 +1,22 @@
+# eliminar entorno virtual obsoleto 
+deactivate  # Desactiva el entorno si está activo
+
+
+Remove-Item -Recurse -Force .\venv  # Elimina la carpeta 'venv'
+
+# crear 
+python -m venv venv
+
+# activar
+.\venv\Scripts\activate
+
+# instalar django 
+
+# crear projecto en la misma raiz
+django-admin startproject mysite .
+
+# ejecutar el servidor 3000
+python manage.py runserver
+
+ # crear app 
+python manage.py startapp blog
