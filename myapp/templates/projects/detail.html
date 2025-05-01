@@ -3,6 +3,12 @@
 {% block content %}
 <h1>{{project}}</h1>
 
+<button>
+    <a href="{% url 'edit_project' project.id %}">Edit</a>
+</button>
+
+<button>Delete</button>
+
 {% for task in tasks %}
 
 <div class="card">
