@@ -1,22 +1,39 @@
-# eliminar entorno virtual obsoleto 
-deactivate  # Desactiva el entorno si está activo
+Instalar virtualenv (si aún no lo tienes):
 
+bash
+1  
+pip install virtualenv
+Crear el entorno virtual (por ejemplo, llamado venv):
 
-Remove-Item -Recurse -Force .\venv  # Elimina la carpeta 'venv'
+bash
+2 
+virtualenv venv
+Alternativamente, si usas Python 3.3+ puedes hacer:
 
-# crear 
+bash
+
 python -m venv venv
+Activar el entorno virtual:
 
-# activar
-.\venv\Scripts\activate
+En Windows:
 
-# instalar django 
+bash
 
-# crear projecto en la misma raiz
-django-admin startproject mysite .
+venv\Scripts\activate
+En Linux/macOS:
 
-# ejecutar el servidor 3000
-python manage.py runserver
+bash
 
- # crear app 
-python manage.py startapp blog
+source venv/bin/activate
+Instalar Django:
+
+bash
+
+pip install django
+(Opcional) Clonar un repositorio:
+Si tienes un repositorio en GitHub o GitLab:
+
+bash
+
+git clone <URL-del-repositorio>
+cd <carpeta-del-repositorio>
